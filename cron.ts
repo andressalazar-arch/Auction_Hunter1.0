@@ -1,6 +1,10 @@
 import pLimit from "p-limit";
 import { prisma } from "./db.js";
-import { runAllScrapers } from "./scraper/index.js";
+import { scrapeAuctionHouse } from "./auctionhouse.js";
+import { scrapeCliveEmson } from "./cliveemson.js";
+import { scrapeAllsop } from "./allsop.js";
+import { scrapeBTGEddisons } from "./btgeddisons.js";
+import { scrapeBarnardMarcus } from "./barnardmarcus.js";
 import { matchesBeds, matchesYorkshire } from "./filters.js";
 import { initEmail, sendEmailPerProperty } from "./email.js";
 
