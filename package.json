@@ -1,0 +1,30 @@
+{
+  "name": "unsold-auction-hunter-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "scrape": "node dist/cron.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:push": "prisma db push"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "@sendgrid/mail": "^8.1.1",
+    "axios": "^1.7.4",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.19.2",
+    "p-limit": "^6.2.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.18.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.10"
+  }
+}
