@@ -1,8 +1,7 @@
-import * as cheerio from "cheerio";
-import { fetchHtml, sleep } from "../../utils/fetch.js";
-import { dedupeKey } from "../../utils/hash.js";
-import { extractBedrooms, extractGuidePrice, extractPostcode } from "../../utils/parse.js";
-import type { ScrapedLot } from "../../utils/types.js";
+import { fetchHtml, sleep } from "./fetch.js";
+import { dedupeKey } from "./hash.js";
+import { extractBedrooms, extractGuidePrice, extractPostcode } from "./parse.js";
+import type { ScrapedLot } from "./types.js";
 
 const SOURCE = "Clive Emson";
 const LIST_URL = "https://www.cliveemson.co.uk/properties/unsold-lots-still-available/";
