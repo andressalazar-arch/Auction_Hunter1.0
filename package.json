@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch/index.ts",
     "start": "node dist/index.js",
-    "build": "tsc -p tsconfig.json",
+"build": "prisma generate --schema=schema.prisma && tsc -p tsconfig.json"
     "scrape": "node dist/cron.js",
     "db:generate": "prisma generate --schema=schema.prisma",
 "db:migrate": "prisma migrate deploy --schema=schema.prisma",
