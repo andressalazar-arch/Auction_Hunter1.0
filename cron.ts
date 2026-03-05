@@ -13,7 +13,14 @@ const concurrency = Number(process.env.SCRAPE_CONCURRENCY ?? 4);
 async function main() {
   initEmail();
 
-  const scraped = await runAllScrapers();
+const scraped = [
+  ...(await scrapeAuctionHouse()),
+  ...(await scrapeCliveEmson()),
+  ...(await scrapeAllsop()),
+  ...(await scrapeBTGEddisons()),
+  ...(await scrapeBarnardMarcus())
+];
+
   console.log(`Scraped candidates: ${scraped.length}`);
 
   const limit = pLimit(concurrency);
